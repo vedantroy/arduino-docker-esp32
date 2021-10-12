@@ -73,6 +73,15 @@ RUN sudo apt-get -y install python3-pip python-is-python3
 RUN sudo apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pip3 install pyserial
 
+# Install Adafruit NeoPixel library
+RUN mkdir ~/Arduino/libraries
+RUN git clone https://github.com/adafruit/Adafruit_NeoPixel.git ~/Arduino/libraries/Adafruit_NeoPixel
+
+# Install more Adafruit libraries
+RUN git clone https://github.com/adafruit/Adafruit_SSD1306.git ~/Arduino/libraries/Adafruit_SSD1306
+RUN git clone https://github.com/adafruit/Adafruit-GFX-Library.git ~/Arduino/libraries/Adafruit_GFX
+RUN git clone https://github.com/adafruit/Adafruit_BusIO.git ~/Arduino/libraries/Adafruit_BusIO
+
 USER developer
 
 # Launch the IDE
