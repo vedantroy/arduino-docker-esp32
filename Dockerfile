@@ -82,6 +82,9 @@ RUN git clone https://github.com/adafruit/Adafruit_SSD1306.git ~/Arduino/librari
 RUN git clone https://github.com/adafruit/Adafruit-GFX-Library.git ~/Arduino/libraries/Adafruit_GFX
 RUN git clone https://github.com/adafruit/Adafruit_BusIO.git ~/Arduino/libraries/Adafruit_BusIO
 
+# To install more complicated libs
+COPY ./WebServer /home/developer/Arduino/libraries/WebServer/
+
 USER developer
 
 # Launch the IDE
